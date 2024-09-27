@@ -47,8 +47,6 @@ TRIGGER_NAME=${APP_ID}-webhook-trigger
 BUILD_YAML_PATH=$WORK_DIR/${TEMPLATE_FOLDER}/cloudbuild.yaml
 
 ## Setup Trigger & Webhook
-echo "gcloud alpha builds triggers create webhook --name=${TRIGGER_NAME} --inline-config=$BUILD_YAML_PATH  --secret=${SECRET_PATH} --substitutions="_APP_ID=${APP_ID},_REGION=${REGION}"',_APP_REPO=$(body.repository.html_url),_REF=$(body.ref),_SHA=$(body.after)' --subscription-filter="_REF != '\$(body.ref)""
-
 gcloud alpha builds triggers create webhook \
     --name=${TRIGGER_NAME} \
     --inline-config=$BUILD_YAML_PATH \
