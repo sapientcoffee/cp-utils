@@ -44,7 +44,7 @@ gcloud secrets add-iam-policy-binding ${SECRET_NAME} \
 echo Create CloudBuild Webhook Endpoint
 TRIGGER_NAME=${APP_ID}-webhook-trigger
 
-BUILD_YAML_PATH=$WORK_DIR/${TEMPLATE_FOLDER}/build/cloudbuild.yaml
+BUILD_YAML_PATH=$WORK_DIR/${TEMPLATE_FOLDER}/cloudbuild.yaml
 
 ## Setup Trigger & Webhook
 gcloud alpha builds triggers create webhook \
